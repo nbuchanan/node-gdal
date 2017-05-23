@@ -1,6 +1,6 @@
 {
   "name": "gdal",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Bindings to GDAL (Geospatial Data Abstraction Library)",
   "license": "Apache-2.0",
   "url": "http://github.com/naturalatlas/node-gdal",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "nan": "~2.5.0",
-    "node-pre-gyp": "~0.6.27"
+    "node-pre-gyp": "~0.6.34"
   },
   "devDependencies": {
     "aws-sdk": "~2.0.25",
@@ -61,5 +61,5 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "engineStrict": true
+  "engine-strict": true
 }

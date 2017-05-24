@@ -79,7 +79,7 @@
 				}],
 				["shared_gdal == 'false'", {
 					"dependencies": [
-					    "deps/libsqlite3/sqlite3.gyp:sqlite3",
+					    "deps/sqlite3/deps/sqlite3.gyp:sqlite3",
 						"deps/libgdal/libgdal.gyp:libgdal"
 					]
 				}, {

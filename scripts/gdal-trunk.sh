@@ -20,6 +20,6 @@ svn checkout https://svn.osgeo.org/gdal/trunk/gdal gdal --non-interactive --trus
 cd gdal
 
 # compile and install
-./configure --with-png=internal --with-jpeg=internal --with-geotiff=internal --with-libtiff=internal
+./configure --with-png=internal --with-jpeg=internal --with-geotiff=internal --with-libtiff=internal --with-sqlite3=internal
 make
 sudo make install

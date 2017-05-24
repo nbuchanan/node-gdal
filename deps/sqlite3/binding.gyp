@@ -31,7 +31,7 @@
         }
         ]
       ],
-      "cflags": [ "-include ../src/gcc-preinclude.h" ],
+#      "cflags": [ "-include ../src/gcc-preinclude.h" ],
       "sources": [
         "src/database.cc",
         "src/node_sqlite3.cc",

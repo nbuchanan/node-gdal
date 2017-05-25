@@ -7,7 +7,7 @@
 			"target_name": "libgdal_ogr_sqlite_frmt",
 			"type": "static_library",
 			"sources": [
-			    # Do not include ogrsqliteregexp.cpp or ogrsqlitesqlfunctions.cpp (cannot be compiled directly)
+				# Do not include ogrsqliteregexp.cpp or ogrsqlitesqlfunctions.cpp (cannot be compiled directly)
 				"../gdal/ogr/ogrsf_frmts/sqlite/ogrsqliteapiroutines.c",
 				"../gdal/ogr/ogrsf_frmts/sqlite/ogrsqlitedatasource.cpp",
 				"../gdal/ogr/ogrsf_frmts/sqlite/ogrsqlitedriver.cpp",
@@ -22,7 +22,7 @@
 				# "../gdal/ogr/ogrsf_frmts/sqlite/test_load_virtual_ogr.c"
 			],
 			"include_dirs": [
-			    "../../../build/Release/obj/global_intermediate/sqlite-autoconf-3150000",
+				"<(SHARED_INTERMEDIATE_DIR)/sqlite-autoconf-<@(sqlite_version)",
 				"../gdal/ogr/ogrsf_frmts/sqlite"
 			]
 		}

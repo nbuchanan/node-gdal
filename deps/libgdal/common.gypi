@@ -6,6 +6,7 @@
 		"shared_geos%": "false",
 		"deps_dir": "../",
 		"endianness": "<!(python -c \"import sys;print(sys.byteorder.upper())\")",
+		"sqlite_version%": "3150000",
 	},
 	"target_defaults": {
 		"include_dirs": [

@@ -7,7 +7,7 @@
 	},
 	"targets": [
 		{
-			"target_name": "gdal",
+			"target_name": "gdal-mbt",
 			"type": "loadable_module",
 			"product_prefix": "",
 			"product_extension": "node",
@@ -130,7 +130,7 @@
 			"copies": [
 				{
 					"files": [
-						"<(PRODUCT_DIR)/gdal.node"
+						"<(PRODUCT_DIR)/<(module_name).node"
 					],
 					"destination": "<(module_path)"
 				}

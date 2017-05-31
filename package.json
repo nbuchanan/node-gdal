@@ -1,9 +1,9 @@
 {
-  "name": "gdal",
-  "version": "0.9.5",
-  "description": "Bindings to GDAL (Geospatial Data Abstraction Library)",
+  "name": "gdal-mbt",
+  "version": "0.9.4",
+  "description": "Bindings to GDAL (Geospatial Data Abstraction Library) with sqlite3 and mbtiles drivers enabled.",
   "license": "Apache-2.0",
-  "url": "http://github.com/naturalatlas/node-gdal",
+  "url": "https://github.com/nbuchanan/node-gdal/tree/gdal-2.2",
   "main": "./lib/gdal.js",
   "keywords": [
     "gdal",
@@ -17,24 +17,33 @@
     "vector",
     "gtiff",
     "geojson",
-    "mapping"
+    "mapping",
+    "sqlite",
+    "mbtiles"
   ],
   "binary": {
-    "module_name": "gdal",
+    "module_name": "gdal-mbt",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
     "remote_path": "./{module_name}/v{version}/{toolset}/",
-    "host": "https://mapbox-node-binary.s3.amazonaws.com",
+    "host": "https://asaspades-builds.s3.amazonaws.com",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/naturalatlas/node-gdal.git"
+    "url": "git://github.com/nbuchanan/node-gdal.git"
   },
-  "author": {
-    "name": "Brandon Reavis",
-    "url": "https://github.com/brandonreavis",
-    "email": "brandon@naturalatlas.com"
-  },
+  "authors": [
+    {
+      "name": "Brandon Reavis",
+      "url": "https://github.com/brandonreavis",
+      "email": "brandon@naturalatlas.com"
+    },
+    {
+      "name": "Nick Buchanan",
+      "url": "https://github.com/nbuchanan",
+      "email": "nbuchanan@gmail.com"
+    }
+  ],
   "scripts": {
     "test": "mocha test -R tap --timeout 600000 --no-colors -gc --require ./test/_common.js",
     "test-syntax": "eslint lib test --fix",

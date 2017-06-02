@@ -14,6 +14,7 @@
 // gdal
 #include <gdal_priv.h>
 #include <gdal_alg.h>
+#include <gdal_utils.h>
 
 // ogr
 #include <ogrsf_frmts.h>
@@ -34,6 +35,7 @@ namespace Algorithms {
 	NAN_METHOD(sieveFilter);
 	NAN_METHOD(checksumImage);
 	NAN_METHOD(polygonize);
+	NAN_METHOD(translate);
 }
 }
 

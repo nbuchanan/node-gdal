@@ -4,6 +4,7 @@
 #include "gdal_dataset.hpp"
 #include "gdal_rasterband.hpp"
 #include "utils/number_list.hpp"
+#include "cpl_string.h"
 
 namespace node_gdal {
 
@@ -14,6 +15,7 @@ void Algorithms::Initialize(Local<Object> target)
 	Nan::SetMethod(target, "sieveFilter", sieveFilter);
 	Nan::SetMethod(target, "checksumImage", checksumImage);
 	Nan::SetMethod(target, "polygonize", polygonize);
+	Nan::SetMethod(target, "translate", translate);
 }
 
 /**
@@ -285,6 +287,46 @@ NAN_METHOD(Algorithms::polygonize)
 		NODE_THROW_CPLERR(err);
 		return;
 	}
+
+	return;
+}
+
+/**
+ * Calls gdal_translate.
+ *
+ * @throws Error
+ * @method translate
+ * @static
+ * @for gdal
+ * @param {Object} options
+ * @param {String} options.dst the destination dataset path
+ * @param {gdal.Dataset} options.src the source dataset handle
+ * @param {string[]|object} [options.options] Translate options (see: [reference](http://www.gdal.org/gdal_translate.html))
+ * @return {gdal.Dataset}
+ */
+NAN_METHOD(Algorithms::translate)
+{
+	Nan::HandleScope scope;
+
+	Local<Object> obj;
+	Dataset* src;
+	std::string dst;
+	GDALTranslateOptions* opts;
+	Dataset* res;
+
+	NODE_ARG_OBJECT(0, "options", obj);
+
+	// Parse input source dataset
+	NODE_WRAPPED_FROM_OBJ(obj, "src", Dataset, src);
+
+	// Parse target destination path
+	NODE_STR_FROM_OBJ(obj, "dst", dst);
+
+	// Call translate function
+	GDALTranslate(dst.c_str(), src->getDataset(), NULL, NULL);
+
+	// Set return value
+//	info.GetReturnValue().Set(Nan::New<Dataset>(res));
 
 	return;
 }

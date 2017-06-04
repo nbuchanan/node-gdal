@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>gdal - node-gdal</title>
+    <title>gdal - node-gdal-mbt</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -16,9 +16,9 @@
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
         
-	    <img alt="node-gdal" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/GDALLogoColor.svg/200px-GDALLogoColor.svg.png" style="max-height: 65%;" title="node-gdal">
+	    <img alt="node-gdal-mbt" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/GDALLogoColor.svg/200px-GDALLogoColor.svg.png" style="max-height: 65%;" title="node-gdal-mbt">
         
-            node-gdal
+            node-gdal-mbt
         </h1>
 	<div class="nav">
             <li class="divider-vertical"></li>
@@ -286,6 +286,10 @@ dataset.layers.get(0).features.forEach(function(feature) {
 				
 				
 				
+				<li><a href="#method-translate"><span class="im">gdal.translate</span>(<span class="ia">options</span>)</a></li>
+				
+				
+				
 				<li><a href="#method-verbose"><span class="im">gdal.verbose</span>()</a></li>
 				
 				
@@ -332,7 +336,7 @@ dataset.layers.get(0).features.forEach(function(feature) {
             
         
         
-        <a href="../files/src_node_gdal.cpp.html#l265"><code>src&#x2F;node_gdal.cpp:265</code></a>
+        <a href="../files/src_node_gdal.cpp.html#l266"><code>src&#x2F;node_gdal.cpp:266</code></a>
         
         </p>
 
@@ -379,7 +383,7 @@ dataset.layers.get(0).features.forEach(function(feature) {
             
         
         
-        <a href="../files/src_node_gdal.cpp.html#l1142"><code>src&#x2F;node_gdal.cpp:1142</code></a>
+        <a href="../files/src_node_gdal.cpp.html#l1143"><code>src&#x2F;node_gdal.cpp:1143</code></a>
         
         </p>
 
@@ -428,7 +432,7 @@ will be null or an object containing three properties: "number",
             
         
         
-        <a href="../files/src_node_gdal.cpp.html#l1132"><code>src&#x2F;node_gdal.cpp:1132</code></a>
+        <a href="../files/src_node_gdal.cpp.html#l1133"><code>src&#x2F;node_gdal.cpp:1133</code></a>
         
         </p>
 
@@ -489,7 +493,7 @@ will be null or an object containing three properties: "number",
             
         
         
-        <a href="../files/src_node_gdal.cpp.html#l88"><code>src&#x2F;node_gdal.cpp:88</code></a>
+        <a href="../files/src_node_gdal.cpp.html#l89"><code>src&#x2F;node_gdal.cpp:89</code></a>
         
         </p>
 
@@ -590,7 +594,7 @@ will be null or an object containing three properties: "number",
 			
 		
 		
-		<a href="../files/src_gdal_algorithms.cpp.html#l181"><code>src&#x2F;gdal_algorithms.cpp:181</code></a>
+		<a href="../files/src_gdal_algorithms.cpp.html#l186"><code>src&#x2F;gdal_algorithms.cpp:186</code></a>
 		
 		</p>
 
@@ -988,7 +992,7 @@ will be null or an object containing three properties: "number",
 			
 		
 		
-		<a href="../files/src_gdal_algorithms.cpp.html#l59"><code>src&#x2F;gdal_algorithms.cpp:59</code></a>
+		<a href="../files/src_gdal_algorithms.cpp.html#l64"><code>src&#x2F;gdal_algorithms.cpp:64</code></a>
 		
 		</p>
 
@@ -1330,7 +1334,7 @@ that should not be considered in contour line generation.</p>
 			
 		
 		
-		<a href="../files/src_gdal_algorithms.cpp.html#l19"><code>src&#x2F;gdal_algorithms.cpp:19</code></a>
+		<a href="../files/src_gdal_algorithms.cpp.html#l24"><code>src&#x2F;gdal_algorithms.cpp:24</code></a>
 		
 		</p>
 
@@ -1747,7 +1751,7 @@ that should not be considered in contour line generation.</p>
 			
 		
 		
-		<a href="../files/src_gdal_algorithms.cpp.html#l230"><code>src&#x2F;gdal_algorithms.cpp:230</code></a>
+		<a href="../files/src_gdal_algorithms.cpp.html#l235"><code>src&#x2F;gdal_algorithms.cpp:235</code></a>
 		
 		</p>
 
@@ -1903,7 +1907,7 @@ provided to determine which pixels are eligible for processing.</p>
 			
 		
 		
-		<a href="../files/src_node_gdal.cpp.html#l1159"><code>src&#x2F;node_gdal.cpp:1159</code></a>
+		<a href="../files/src_node_gdal.cpp.html#l1160"><code>src&#x2F;node_gdal.cpp:1160</code></a>
 		
 		</p>
 
@@ -2251,7 +2255,7 @@ provided to determine which pixels are eligible for processing.</p>
 			
 		
 		
-		<a href="../files/src_gdal_algorithms.cpp.html#l133"><code>src&#x2F;gdal_algorithms.cpp:133</code></a>
+		<a href="../files/src_gdal_algorithms.cpp.html#l138"><code>src&#x2F;gdal_algorithms.cpp:138</code></a>
 		
 		</p>
 
@@ -2520,6 +2524,151 @@ should be large enough to include all the input image.</p>
             
         
 			
+<div id="method-translate" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>gdal.translate</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>options</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/gdal.Dataset.html" class="crosslink">gdal.Dataset</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/src_gdal_algorithms.cpp.html#l297"><code>src&#x2F;gdal_algorithms.cpp:297</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Calls gdal_translate.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">options</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+
+					
+						<ul class="params-list">
+							
+							<li class="param">
+								
+									<code class="param-name">src</code>
+									<span class="type"><a href="../classes/gdal.Dataset.html" class="crosslink">gdal.Dataset</a></span>
+								
+
+								<div class="param-description"><p>the source dataset handle</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name">dst</code>
+									<span class="type">String</span>
+								
+
+								<div class="param-description"><p>the destination dataset path</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name">outputFormat</code>
+									<span class="type">String</span>
+								
+
+								<div class="param-description"><p>the desired output format. see (<a href="../classes/gdal.GDALDrivers.html" class="crosslink">drivers list</a>) for possible options.</p>
+</div>
+
+								
+							</li>
+							
+						</ul>
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/gdal.Dataset.html" class="crosslink">gdal.Dataset</a></span>:
+					
+					<p>newly created dataset</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+			
 <div id="method-verbose" class="method item">
 	<div class="method-signature">
 	<span class="name"><code>gdal.verbose</code></span>
@@ -2551,7 +2700,7 @@ should be large enough to include all the input image.</p>
 			
 		
 		
-		<a href="../files/src_node_gdal.cpp.html#l1168"><code>src&#x2F;node_gdal.cpp:1168</code></a>
+		<a href="../files/src_node_gdal.cpp.html#l1169"><code>src&#x2F;node_gdal.cpp:1169</code></a>
 		
 		</p>
 

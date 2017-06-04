@@ -57,6 +57,7 @@
 
 #include "gdal.hpp"
 #include "utils/field_types.hpp"
+#include "utils/translate_options.hpp"
 
 //collections
 #include "collections/dataset_bands.hpp"

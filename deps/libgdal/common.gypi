@@ -11,6 +11,7 @@
 	"target_defaults": {
 		"include_dirs": [
 			"./gdal/alg",
+			"./gdal/apps",
 			"./gdal/gcore",
 			"./gdal/apps",
 			"./gdal/port",

@@ -23,12 +23,8 @@ typedef enum
     MASK_USER
 } MaskMode;
 
-/************************************************************************/
-/*                         GDALTranslateScaleParams                     */
-/************************************************************************/
 
-/** scaling parameters for use in GDALTranslateOptions.
- */
+// scaling parameters for use in GDALTranslateOptions.
 typedef struct
 {
     /*! scaling is done only if it is set to TRUE. This is helpful when there is a need to
@@ -48,13 +44,7 @@ typedef struct
     double  dfScaleDstMin, dfScaleDstMax;
 } GDALTranslateScaleParams;
 
-/************************************************************************/
-/*                         GDALTranslateOptions                         */
-/************************************************************************/
-
-/** Options for use with GDALTranslate(). GDALTranslateOptions* must be allocated
- * and freed with GDALTranslateOptionsNew() and GDALTranslateOptionsFree() respectively.
- */
+// Options for use with GDALTranslate().
 struct GDALTranslateOptions
 {
 

@@ -304,7 +304,9 @@ NAN_METHOD(Algorithms::polygonize)
  * @param {Object} options
  * @param {gdal.Dataset} options.src the source dataset handle
  * @param {String} options.dst the destination dataset path
- * @param {String} options.outputFormat the desired output format. see ({{#crossLink "gdal.GDALDrivers"}}drivers list{{/crossLink}}) for possible options.
+ * @param {String} [options.outputFormat] the desired output format. see ({{#crossLink "gdal.GDALDrivers"}}drivers list{{/crossLink}}) for possible options.
+ * @param {gdal.Envelope} [options.projWin] selects a subwindow from the source image for copying with the corners given in georeferenced coordinates (by default expressed in the SRS of the dataset. Can be changed with projWinSRS)
+ * @param {String} [options.projWinSRS] specifies the SRS in which to interpret the coordinates given with projWin. The srs_def may be any of the usual GDAL/OGR forms, complete WKT, PROJ.4, EPSG:n or a file containing the WKT. Note that this does not cause reprojection of the dataset to the specified SRS.
  * @return {gdal.Dataset} newly created dataset
  */
 NAN_METHOD(Algorithms::translate)

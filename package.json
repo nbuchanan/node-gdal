@@ -1,9 +1,9 @@
 {
-  "name": "gdal",
+  "name": "gdal-enhanced",
   "version": "0.9.4",
-  "description": "Bindings to GDAL (Geospatial Data Abstraction Library)",
+  "description": "Bindings to GDAL (Geospatial Data Abstraction Library) with non-default drivers",
   "license": "Apache-2.0",
-  "url": "http://github.com/naturalatlas/node-gdal",
+  "url": "http://github.com/nbuchanan/node-gdal",
   "main": "./lib/gdal.js",
   "keywords": [
     "gdal",
@@ -20,15 +20,15 @@
     "mapping"
   ],
   "binary": {
-    "module_name": "gdal",
+    "module_name": "gdal-enhanced",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
     "remote_path": "./{module_name}/v{version}/{toolset}/",
-    "host": "https://mapbox-node-binary.s3.amazonaws.com",
+    "host": "https://asaspades-builds.s3.amazonaws.com",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/naturalatlas/node-gdal.git"
+    "url": "git://github.com/nbuchanan/node-gdal.git"
   },
   "author": {
     "name": "Brandon Reavis",
@@ -44,12 +44,12 @@
     "publish-yuidoc": "npm run yuidoc && node ./scripts/publish-docs.js"
   },
   "dependencies": {
-    "nan": "~2.5.0",
-    "node-pre-gyp": "~0.6.27"
+    "nan": "2.x",
+    "node-pre-gyp": "~0.6.36"
   },
   "bundledDependencies":["node-pre-gyp"],
   "devDependencies": {
-    "aws-sdk": "~2.0.25",
+    "aws-sdk": "2.x",
     "chai": "^3.4.1",
     "eslint": "^1.10.1",
     "eslint-config-naturalatlas": "latest",
@@ -61,5 +61,5 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "engineStrict": true
+  "engine-strict": true
 }

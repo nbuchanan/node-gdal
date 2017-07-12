@@ -6,4 +6,4 @@ all:
 clean:
 	rm -rf libgdal/gyp-formats
 	rm -rf libgdal/gdal
-	rm -f libgdal/libgdal_formats.gyi
+	rm -f libgdal/libgdal_formats.gypi

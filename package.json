@@ -5,6 +5,7 @@
   "license": "Apache-2.0",
   "url": "http://github.com/nbuchanan/node-gdal",
   "main": "./lib/gdal.js",
+  "bin": "./lib/gdal-enhanced.js",
   "keywords": [
     "gdal",
     "libgdal",
@@ -41,26 +42,37 @@
     "install": "node-pre-gyp install --fallback-to-build",
     "postpublish": "npm run publish-yuidoc",
     "yuidoc": "yuidoc --extension .js,.cpp,.hpp",
-    "publish-yuidoc": "npm run yuidoc && node ./scripts/publish-docs.js"
+    "publish-yuidoc": "npm run yuidoc && node ./scripts/publish-docs.js",
+    "package": "npm run copy-pkg-deps -s && pkg . --targets node4 --out-dir packaged",
+    "copy-pkg-deps": "copyfiles -f lib/binding/node-v46-win32-x64/* packaged"
   },
   "dependencies": {
     "loglevel": "^1.4.1",
     "nan": "2.x",
-    "node-pre-gyp": "~0.6.36"
+    "node-pre-gyp": "~0.6.36",
+    "yargs": "^8.0.2"
   },
-  "bundledDependencies":["node-pre-gyp"],
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
   "devDependencies": {
     "aws-sdk": "2.x",
     "chai": "^3.4.1",
+    "copyfiles": "^1.2.0",
     "eslint": "^1.10.1",
     "eslint-config-naturalatlas": "latest",
     "gh-pages": "~0.2.0",
     "mocha": "^2.3.4",
+    "pkg": "4.1.1",
     "yuidoc-lucid-theme": "~0.1.1",
     "yuidocjs": "~0.3.50"
   },
   "engines": {
-    "node": ">= 0.8.0"
+    "node": "4.6.2"
   },
-  "engine-strict": true
+  "engine-strict": true,
+  "pkg": {
+    "scripts": "",
+    "assets": "deps/libgdal/gdal/data/*"
+  }
 }

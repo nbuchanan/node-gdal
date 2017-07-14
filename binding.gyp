@@ -83,7 +83,7 @@
 					]
 				}, {
 					"conditions": [
-						['OS == "win"', {
+						["OS == 'win'", {
 							"libraries": [
 								"-lsecur32.lib",
 								"-lws2_32.lib",
@@ -120,9 +120,19 @@
 						}]
 					]
 				}],
-                ["'<(mrsid_include)' != ''",{
-                    "libraries": [
-                        "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Raster_DSDK/lib/').map(f=>'<(mrsid_include)/Raster_DSDK/lib/'+f).join(' ')\")"
+                ["'<(mrsid_include)' != ''", {
+                    "conditions": [
+                        ["OS == 'win'", {
+                            "libraries": [
+                                "<(mrsid_include)/Raster_DSDK/lib/lti_dsdk.lib",
+                                "<(mrsid_include)/Raster_DSDK/lib/lti_dsdk_cdll.lib"
+                            ]
+                        }],
+                        ["OS != 'win'", {
+                            "libraries": [
+                                "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Raster_DSDK/lib/').map(f=>'<(mrsid_include)/Raster_DSDK/lib/'+f).join(' ')\")"
+                            ]
+                        }]
                     ]
                 }]
 			]

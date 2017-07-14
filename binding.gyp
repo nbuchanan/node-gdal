@@ -125,12 +125,14 @@
                         ["OS == 'win'", {
                             "libraries": [
                                 "<(mrsid_include)/Raster_DSDK/lib/lti_dsdk.lib",
-                                "<(mrsid_include)/Raster_DSDK/lib/lti_dsdk_cdll.lib"
+                                "<(mrsid_include)/Raster_DSDK/lib/lti_dsdk_cdll.lib",
+                                "<(mrsid_include)/Lidar_DSDK/lib/lti_lidar_dsdk.lib"
                             ]
                         }],
                         ["OS != 'win'", {
                             "libraries": [
-                                "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Raster_DSDK/lib/').map(f=>'<(mrsid_include)/Raster_DSDK/lib/'+f).join(' ')\")"
+                                "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Raster_DSDK/lib/').map(f=>'<(mrsid_include)/Raster_DSDK/lib/'+f).join(' ')\")",
+                                "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Lidar_DSDK/lib/').map(f=>'<(mrsid_include)/Lidar_DSDK/lib/'+f).join(' ')\")"
                             ]
                         }]
                     ]
@@ -154,7 +156,8 @@
                     "copies": [
                         {
                             "files": [
-                                "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Raster_DSDK/lib/').map(f=>'<(mrsid_include)/Raster_DSDK/lib/'+f).join(' ')\")"
+                                "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Raster_DSDK/lib/').map(f=>'<(mrsid_include)/Raster_DSDK/lib/'+f).join(' ')\")",
+                                "<!@(node -p \"require('fs').readdirSync('<(mrsid_include)/Lidar_DSDK/lib/').map(f=>'<(mrsid_include)/Lidar_DSDK/lib/'+f).join(' ')\")"
                             ],
                             "destination": "<(module_path)"
                         }

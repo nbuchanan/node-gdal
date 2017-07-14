@@ -203,10 +203,12 @@
         ['mrsid_include != ""',{
             "variables": {
                 "gdal_format_gyps": [
-                    "./gyp-formats/mrsid.gyp:libgdal_mrsid_frmt"
+                    "./gyp-formats/mrsid.gyp:libgdal_mrsid_frmt",
+                    "./gyp-formats/mrsid_lidar.gyp:libgdal_mrsid_lidar_frmt"
                 ],
                 "gdal_format_defs": [
-                    "FRMT_mrsid=1"
+                    "FRMT_mrsid=1",
+                    "FRMT_mrsid_lidar=1"
                 ]
             }
         }]

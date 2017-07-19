@@ -26,3 +26,4 @@ deps/libexpat/expat.tar.gz
 lib/binding
 yuidocs
 data
+*test-results.xml

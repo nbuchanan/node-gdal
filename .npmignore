@@ -15,3 +15,9 @@ docs
 *.bz2
 *.log
 yuidocs
+scripts
+win-compile.bat
+.idea
+*.iml
+data
+packaged

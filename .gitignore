@@ -26,4 +26,5 @@ deps/libexpat/expat.tar.gz
 lib/binding
 yuidocs
 data
+!deps/libgdal/gdal/data
 *test-results.xml

@@ -21,3 +21,4 @@ win-compile.bat
 *.iml
 data
 packaged
+!deps/libgdal/gdal/data

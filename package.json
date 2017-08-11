@@ -1,5 +1,5 @@
 {
-  "name": "gdal-mbt",
+  "name": "gdal-enhanced",
   "version": "0.9.5",
   "description": "Bindings to GDAL (Geospatial Data Abstraction Library) with sqlite3 and mbtiles drivers enabled.",
   "license": "Apache-2.0",
@@ -22,7 +22,7 @@
     "mbtiles"
   ],
   "binary": {
-    "module_name": "gdal-mbt",
+    "module_name": "gdal-enhanced",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
     "remote_path": "./{module_name}/v{version}/{toolset}/",
     "host": "https://asaspades-builds.s3.amazonaws.com",

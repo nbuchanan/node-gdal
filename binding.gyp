@@ -7,7 +7,7 @@
 	},
 	"targets": [
 		{
-			"target_name": "gdal-mbt",
+			"target_name": "gdal-enhanced",
 			"type": "loadable_module",
 			"product_prefix": "",
 			"product_extension": "node",

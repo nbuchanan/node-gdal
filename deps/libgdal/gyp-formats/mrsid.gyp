@@ -6,6 +6,9 @@
         {
             "target_name": "libgdal_mrsid_frmt",
             "type": "static_library",
+            "defines": [
+               "MRSID_J2K=1"
+            ],
             "sources": [
                 "../gdal/frmts/mrsid/mrsidstream.cpp",
                 "../gdal/frmts/mrsid/mrsiddataset.cpp"

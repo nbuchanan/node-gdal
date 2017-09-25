@@ -208,8 +208,7 @@
                 ],
                 "gdal_format_defs": [
                     "FRMT_mrsid=1",
-                    "FRMT_mrsid_lidar=1",
-                    "MRSID_JP2=YES"
+                    "FRMT_mrsid_lidar=1"
                 ]
             }
         }]

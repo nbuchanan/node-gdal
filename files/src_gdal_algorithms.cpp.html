@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src/gdal_algorithms.cpp - node-gdal-mbt</title>
+    <title>src/gdal_algorithms.cpp - node-gdal</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -16,9 +16,9 @@
     <div class="navbar-inner">
         <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
         
-	    <img alt="node-gdal-mbt" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/GDALLogoColor.svg/200px-GDALLogoColor.svg.png" style="max-height: 65%;" title="node-gdal-mbt">
+	    <img alt="node-gdal" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/GDALLogoColor.svg/200px-GDALLogoColor.svg.png" style="max-height: 65%;" title="node-gdal">
         
-            node-gdal-mbt
+            node-gdal
         </h1>
 	<div class="nav">
             <li class="divider-vertical"></li>
@@ -175,16 +175,12 @@
 
 <div class="file">
     <pre class="prettyprint linenums">
-#include &lt;gdal_utils.h&gt;
-
 #include &quot;gdal_algorithms.hpp&quot;
 #include &quot;gdal_common.hpp&quot;
 #include &quot;gdal_layer.hpp&quot;
 #include &quot;gdal_dataset.hpp&quot;
 #include &quot;gdal_rasterband.hpp&quot;
 #include &quot;utils/number_list.hpp&quot;
-#include &quot;cpl_string.h&quot;
-#include &quot;utils/translate_options.hpp&quot;
 
 namespace node_gdal {
 
@@ -195,7 +191,6 @@ void Algorithms::Initialize(Local&lt;Object&gt; target)
 	Nan::SetMethod(target, &quot;sieveFilter&quot;, sieveFilter);
 	Nan::SetMethod(target, &quot;checksumImage&quot;, checksumImage);
 	Nan::SetMethod(target, &quot;polygonize&quot;, polygonize);
-	Nan::SetMethod(target, &quot;translate&quot;, translate);
 }
 
 /**
@@ -467,84 +462,6 @@ NAN_METHOD(Algorithms::polygonize)
 		NODE_THROW_CPLERR(err);
 		return;
 	}
-
-	return;
-}
-
-/**
- * Calls gdal_translate.
- *
- * @throws Error
- * @method translate
- * @static
- * @for gdal
- * @param {Object} options
- * @param {gdal.Dataset} options.src the source dataset handle
- * @param {String} options.dst the destination dataset path
- * @param {String} options.outputFormat the desired output format. see ({{#crossLink &quot;gdal.GDALDrivers&quot;}}drivers list{{/crossLink}}) for possible options.
- * @return {gdal.Dataset} newly created dataset
- */
-NAN_METHOD(Algorithms::translate)
-{
-	Nan::HandleScope scope;
-
-	Local&lt;Object&gt; obj;
-	Local&lt;Value&gt; prop;
-
-	GDALDataset* src;
-	std::string dst;
-	TranslateOptions options;
-	GDALTranslateOptions* opts;
-	Dataset* res;
-
-	NODE_ARG_OBJECT(0, &quot;options&quot;, obj);
-
-    if(options.parse(obj)){
-        return; // error parsing options object
-    } else {
-        opts = options.get();
-    }
-
-	// Parse input source dataset
-    if(obj-&gt;HasOwnProperty(Nan::New(&quot;src&quot;).ToLocalChecked())){
-        prop = obj-&gt;Get(Nan::New(&quot;src&quot;).ToLocalChecked());
-        if(prop-&gt;IsObject() &amp;&amp; !prop-&gt;IsNull() &amp;&amp; Nan::New(Dataset::constructor)-&gt;HasInstance(prop)){
-            Dataset *ds = Nan::ObjectWrap::Unwrap&lt;Dataset&gt;(prop.As&lt;Object&gt;());
-            src = ds-&gt;getDataset();
-            if(!src){
-                #if GDAL_VERSION_MAJOR &lt; 2
-                if(ds-&gt;getDatasource()) {
-                    Nan::ThrowError(&quot;src dataset must be a raster dataset&quot;); return;
-                }
-                #endif
-                Nan::ThrowError(&quot;src dataset already closed&quot;); return;
-            }
-        } else {
-            Nan::ThrowTypeError(&quot;src property must be a Dataset object&quot;); return;
-        }
-    } else {
-        Nan::ThrowError(&quot;Translate options must include a source dataset&quot;); return;
-    }
-
-    // Parse target destination path
-    Local&lt;String&gt; sym = Nan::New(&quot;dst&quot;).ToLocalChecked();
-    if (!obj-&gt;HasOwnProperty(sym)){
-        Nan::ThrowError(&quot;Object must contain property dst&quot;); return;
-    }
-    Local&lt;Value&gt; val = obj-&gt;Get(sym);
-    if (!val-&gt;IsString()){
-        Nan::ThrowTypeError(&quot;Property dst must be a string&quot;); return;
-    }
-	NODE_STR_FROM_OBJ(obj, &quot;dst&quot;, dst);
-
-    NODE_STR_FROM_OBJ_OPT(obj, &quot;outputFormat&quot;, opts-&gt;pszFormat);
-
-	// Call translate function
-	GDALTranslate(dst.c_str(), src, opts, NULL);
-
-	// Set return value
-	// TODO Implement this
-//	info.GetReturnValue().Set(Nan::New&lt;Dataset&gt;(res));
 
 	return;
 }

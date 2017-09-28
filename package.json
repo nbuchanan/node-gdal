@@ -4,8 +4,6 @@
   "description": "Bindings to GDAL (Geospatial Data Abstraction Library) with non-default drivers",
   "license": "Apache-2.0",
   "url": "http://github.com/nbuchanan/node-gdal",
-  "main": "./lib/gdal.js",
-  "bin": "./lib/gdal-enhanced.js",
   "keywords": [
     "gdal",
     "libgdal",
@@ -20,11 +18,12 @@
     "geojson",
     "mapping"
   ],
+  "bin": "./lib/gdal-enhanced.js",
   "binary": {
     "module_name": "gdal-enhanced",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
-    "remote_path": "./{module_name}/v{version}/{toolset}/",
     "host": "https://asaspades-builds.s3.amazonaws.com",
+    "remote_path": "./{module_name}/v{version}/{toolset}/",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
   },
   "repository": {
@@ -40,6 +39,7 @@
     "test": "mocha test -R tap --timeout 600000 --no-colors -gc --require ./test/_common.js",
     "test-syntax": "eslint lib test --fix",
     "test-junit-output": "mocha test -R tap --timeout 600000 --no-colors -gc --require ./test/_common.js --reporter mocha-junit-reporter",
+    "prepublishOnly": "npm ls",
     "install": "node-pre-gyp install --fallback-to-build",
     "postpublish": "npm run publish-yuidoc",
     "yuidoc": "yuidoc --extension .js,.cpp,.hpp",
@@ -48,31 +48,32 @@
     "copy-pkg-deps": "copyfiles -f lib/binding/node-*/* packaged"
   },
   "dependencies": {
-    "loglevel": "^1.4.1",
-    "nan": "2.x",
-    "node-pre-gyp": "~0.6.36",
-    "yargs": "^8.0.2"
+    "loglevel": "1.5.0",
+    "nan": "~2.7.0",
+    "node-pre-gyp": "~0.6.38",
+    "yargs": "8.0.2"
   },
   "bundledDependencies": [
     "node-pre-gyp"
   ],
   "devDependencies": {
     "aws-sdk": "2.x",
-    "chai": "^3.4.1",
-    "copyfiles": "^1.2.0",
-    "eslint": "^1.10.1",
+    "chai": "3.4.1",
+    "copyfiles": "1.2.0",
+    "eslint": "1.10.1",
     "eslint-config-naturalatlas": "latest",
     "gh-pages": "~0.2.0",
-    "mocha": "^2.3.4",
-    "mocha-junit-reporter": "^1.13.0",
+    "mocha": "2.3.4",
+    "mocha-junit-reporter": "1.13.0",
     "pkg": "4.2.3",
-    "yuidoc-lucid-theme": "~0.1.1",
-    "yuidocjs": "~0.3.50"
+    "yuidoc-lucid-theme": "0.1.1",
+    "yuidocjs": "0.3.50"
   },
   "engines": {
     "node": "4.6.2"
   },
   "engine-strict": true,
+  "main": "./lib/gdal.js",
   "pkg": {
     "scripts": "",
     "assets": "deps/libgdal/gdal/data/*"

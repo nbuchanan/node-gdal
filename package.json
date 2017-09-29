@@ -18,7 +18,7 @@
     "geojson",
     "mapping"
   ],
-  "bin": "./lib/gdal-enhanced.js",
+  "main": "./lib/gdal.js",  
   "binary": {
     "module_name": "gdal-enhanced",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
@@ -70,10 +70,9 @@
     "yuidocjs": "0.3.50"
   },
   "engines": {
-    "node": "4.6.2"
-  },
-  "engine-strict": true,
-  "main": "./lib/gdal.js",
+    "node": ">=4.6"
+  },  
+  "bin": "./lib/gdal.js",
   "pkg": {
     "scripts": "",
     "assets": "deps/libgdal/gdal/data/*"

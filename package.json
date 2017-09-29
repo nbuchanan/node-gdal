@@ -1,6 +1,6 @@
 {
   "name": "gdal-enhanced",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "description": "Bindings to GDAL (Geospatial Data Abstraction Library) with non-default drivers",
   "license": "Apache-2.0",
   "url": "http://github.com/nbuchanan/node-gdal",

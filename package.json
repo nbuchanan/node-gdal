@@ -1,6 +1,6 @@
 {
   "name": "gdal-enhanced",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "description": "Bindings to GDAL (Geospatial Data Abstraction Library) with non-default drivers",
   "license": "Apache-2.0",
   "url": "http://github.com/nbuchanan/node-gdal",
@@ -18,7 +18,7 @@
     "geojson",
     "mapping"
   ],
-  "main": "./lib/gdal.js",  
+  "main": "./lib/gdal.js",
   "binary": {
     "module_name": "gdal-enhanced",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
@@ -71,7 +71,7 @@
   },
   "engines": {
     "node": ">=4.6"
-  },  
+  },
   "bin": "./lib/gdal.js",
   "pkg": {
     "scripts": "",

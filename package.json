@@ -41,7 +41,6 @@
     "test-junit-output": "mocha test -R tap --timeout 600000 --no-colors -gc --require ./test/_common.js --reporter mocha-junit-reporter",
     "prepublishOnly": "npm ls",
     "install": "node-pre-gyp install --fallback-to-build",
-    "postpublish": "npm run publish-yuidoc",
     "yuidoc": "yuidoc --extension .js,.cpp,.hpp",
     "publish-yuidoc": "npm run yuidoc && node ./scripts/publish-docs.js",
     "package": "npm run copy-pkg-deps -s && pkg . --targets node4 --out-dir packaged",

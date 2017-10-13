@@ -48,8 +48,8 @@
   },
   "dependencies": {
     "loglevel": "1.5.0",
-    "nan": "~2.7.0",
-    "node-pre-gyp": "~0.6.38",
+    "nan": "2.x",
+    "node-pre-gyp": "0.6.36",
     "yargs": "8.0.2"
   },
   "bundledDependencies": [

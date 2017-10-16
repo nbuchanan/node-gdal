@@ -20,7 +20,7 @@
   ],
   "main": "./lib/gdal.js",
   "binary": {
-    "module_name": "gdal-enhanced",
+    "module_name": "gdal_enhanced",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
     "host": "https://asaspades-builds.s3.amazonaws.com",
     "remote_path": "./{module_name}/v{version}/{toolset}/",

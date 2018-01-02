@@ -23,7 +23,7 @@
     "module_name": "gdal_enhanced",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
     "host": "https://asaspades-builds.s3.amazonaws.com",
-    "remote_path": "./{module_name}/v{version}/{toolset}/",
+    "remote_path": "./{name}/v{version}/{toolset}/",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
   },
   "repository": {

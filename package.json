@@ -49,7 +49,7 @@
   "dependencies": {
     "loglevel": "1.5.0",
     "nan": "2.6.2",
-    "node-pre-gyp": "0.6.36",
+    "node-pre-gyp": "0.6.37",
     "yargs": "8.0.2"
   },
   "bundledDependencies": [
